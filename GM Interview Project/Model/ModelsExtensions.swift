@@ -10,12 +10,25 @@ import Foundation
 
 /// MARK:- models
 struct CommitModel {
+    let author, hash, message: String
+    init(author: String, hash: String, message: String) {
+        self.author     = author
+        self.hash       = hash
+        self.message    = message
+    }
 }
 
 /// MARK:- extensions
 extension CommitModel {
     func prettyString () -> NSAttributedString {
         let attribuetdString = NSMutableAttributedString(string: "")
+        let bigString =
+        """
+        \(self.author)
+        \(self.hash)
+        \(self.message)
+        """
+        attribuetdString.append(NSAttributedString(string: bigString))
         return attribuetdString
     }
 }

@@ -38,6 +38,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }
+
 // MARK:- handle data
 extension ViewController {
     func fetchData () {

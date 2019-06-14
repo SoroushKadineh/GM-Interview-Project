@@ -22,5 +22,13 @@ struct Cell_Identifiers {
     static let commitCell = "commitCell"
 }
 
+struct JsonKeys {
+    static let sha      = "sha"
+    static let commit   = "commit"
+    static let author   = "author"
+    static let name     = "name"
+    static let message  = "message"
+}
+
 // MARK:- typealias
 typealias GenericDictionary = [String:Any]
