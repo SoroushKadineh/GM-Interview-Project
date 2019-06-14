@@ -11,7 +11,6 @@
 		EC629B8C22B32DAA0036B1F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC629B8B22B32DAA0036B1F8 /* ViewController.swift */; };
 		EC629B8F22B32DAA0036B1F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC629B8D22B32DAA0036B1F8 /* Main.storyboard */; };
 		EC629B9122B32DAC0036B1F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC629B9022B32DAC0036B1F8 /* Assets.xcassets */; };
-		EC629B9422B32DAC0036B1F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC629B9222B32DAC0036B1F8 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +19,6 @@
 		EC629B8B22B32DAA0036B1F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EC629B8E22B32DAA0036B1F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC629B9022B32DAC0036B1F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EC629B9322B32DAC0036B1F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC629B9522B32DAC0036B1F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,14 +52,45 @@
 		EC629B8822B32DAA0036B1F8 /* GM Interview Project */ = {
 			isa = PBXGroup;
 			children = (
-				EC629B8922B32DAA0036B1F8 /* AppDelegate.swift */,
-				EC629B8B22B32DAA0036B1F8 /* ViewController.swift */,
-				EC629B8D22B32DAA0036B1F8 /* Main.storyboard */,
-				EC629B9022B32DAC0036B1F8 /* Assets.xcassets */,
-				EC629B9222B32DAC0036B1F8 /* LaunchScreen.storyboard */,
-				EC629B9522B32DAC0036B1F8 /* Info.plist */,
+				EC629B9E22B32E700036B1F8 /* Resources */,
+				EC629B9D22B32E670036B1F8 /* Controller */,
+				EC629B9C22B32E600036B1F8 /* View */,
+				EC629B9B22B32E540036B1F8 /* Model */,
 			);
 			path = "GM Interview Project";
+			sourceTree = "<group>";
+		};
+		EC629B9B22B32E540036B1F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EC629B9C22B32E600036B1F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EC629B8D22B32DAA0036B1F8 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EC629B9D22B32E670036B1F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EC629B8B22B32DAA0036B1F8 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EC629B9E22B32E700036B1F8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EC629B8922B32DAA0036B1F8 /* AppDelegate.swift */,
+				EC629B9022B32DAC0036B1F8 /* Assets.xcassets */,
+				EC629B9522B32DAC0036B1F8 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,7 +151,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC629B9422B32DAC0036B1F8 /* LaunchScreen.storyboard in Resources */,
 				EC629B9122B32DAC0036B1F8 /* Assets.xcassets in Resources */,
 				EC629B8F22B32DAA0036B1F8 /* Main.storyboard in Resources */,
 			);
@@ -149,14 +177,6 @@
 				EC629B8E22B32DAA0036B1F8 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		EC629B9222B32DAC0036B1F8 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EC629B9322B32DAC0036B1F8 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -284,7 +304,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EBYTHUVN6B;
-				INFOPLIST_FILE = "GM Interview Project/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/GM Interview Project/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +322,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EBYTHUVN6B;
-				INFOPLIST_FILE = "GM Interview Project/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/GM Interview Project/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
