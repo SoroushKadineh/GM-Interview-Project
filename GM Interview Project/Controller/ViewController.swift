@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var commitTableView: UITableView!
     var commitList = [CommitModel]()
     
@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         fetchData()
     }
 }
+
 
 // MARK:- handle table view
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -39,12 +40,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+
 // MARK:- handle data
 extension ViewController {
     func fetchData () {
+        turnNetworkIndicator(.on)
         DataManager.shared.downloadData { (optionalCommitModelArr) in
             DispatchQueue.main.async { [weak self] in
                 guard let strongRef = self else { return }
+                strongRef.turnNetworkIndicator(.off)
                 guard let commitModelArr = optionalCommitModelArr else { strongRef.displayError(); return }
                 strongRef.commitList = commitModelArr
                 strongRef.commitTableView.reloadData()
@@ -52,9 +56,13 @@ extension ViewController {
         }
     }
     
+    func turnNetworkIndicator (_ state: IndicatorState) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = state.bool
+    }
+    
     func displayError () {
-        let alertController = UIAlertController(title: "Error", message: "Something went wrong, try again!", preferredStyle: .alert)
-        let cancelAction    = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let alertController = UIAlertController(title: GenericStrings.error, message: GenericStrings.somethingWentWrong, preferredStyle: .alert)
+        let cancelAction    = UIAlertAction(title: GenericStrings.cancel, style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
     }

@@ -11,7 +11,7 @@ import Foundation
 class DataManager {
     static let shared = DataManager()
     
-    func downloadData (compilitionHandler: @escaping (_ list:[CommitModel]?) -> ()) {
+    final func downloadData (compilitionHandler: @escaping (_ list:[CommitModel]?) -> ()) {
         guard let url = URL(string: URL_Address.appleURL) else { compilitionHandler(nil); return }
         URLSession.shared.dataTask(with: url) { [weak self] (optionalData, optionalResponse, optionalError) in
             guard let strongRef = self else { compilitionHandler(nil); return }
@@ -22,7 +22,7 @@ class DataManager {
             }.resume()
     }
     
-    func parseData (_ jsonResponse: Any) -> [CommitModel]? {
+    private func parseData (_ jsonResponse: Any) -> [CommitModel]? {
         guard let jsonArr = jsonResponse as? [GenericDictionary] else { return nil }
         
         var commitList = [CommitModel]()
@@ -42,7 +42,7 @@ class DataManager {
         return commitList
     }
     
-    func isResponseOk (optionalResponse: URLResponse?) -> Bool {
+    private func isResponseOk (optionalResponse: URLResponse?) -> Bool {
         guard let response = optionalResponse as? HTTPURLResponse, response.statusCode == 200 else { return false }
         return true
     }
